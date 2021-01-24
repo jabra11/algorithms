@@ -1,9 +1,9 @@
 #include <iterator>
-#include <concepts>
 
 #include <utils.hpp>
 
 
+// O(n^2), Omega(n^2)
 template<std::random_access_iterator T>
 void selection_sort(T begin, T end)
 {
