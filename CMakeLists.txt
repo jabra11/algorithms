@@ -8,6 +8,6 @@ set(CMAKE_CXX_EXTENSIONS OFF)
 find_package(benchmark REQUIRED)
 find_package(GTest REQUIRED)
 
-add_subdirectory(sorting)
 add_subdirectory(utility)
-
+add_subdirectory(sorting)
+add_subdirectory(searching)
