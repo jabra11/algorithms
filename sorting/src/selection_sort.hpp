@@ -1,7 +1,9 @@
 #include <iterator>
 
 // O(n^2), Omega(n^2)
-template<std::random_access_iterator T>
+template<typename T>
+    requires(std::random_access_iterator<T> &&
+            std::totally_ordered<std::iter_value_t<T>>)
 void selection_sort(T begin, T end)
 {
     for (auto i = begin; i < end-1; ++i)    
