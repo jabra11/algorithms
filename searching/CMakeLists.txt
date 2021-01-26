@@ -1,6 +1,7 @@
 set(src
     src/main.cc
     src/linear_search.hpp
+    src/binary_search.hpp
     )
 
 add_executable(searching ${src})
