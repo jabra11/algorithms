@@ -1,5 +1,8 @@
 #include <iterator>
 
+namespace jab::sorting
+{
+
 // O(n^2), Omega(n^2)
 template<typename T>
     requires(std::random_access_iterator<T> &&
@@ -21,3 +24,5 @@ void selection_sort(T begin, T end)
         *min = tmp;
     }
 }
+
+} // namespace jab::sorting

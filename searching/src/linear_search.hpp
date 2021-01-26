@@ -3,6 +3,9 @@
 
 #include <utils.hpp>
 
+namespace jab::searching
+{
+
 // returns an iterator to the searched object.
 // if the object wasn't found, the end iterator is returned
 template<typename T> 
@@ -16,3 +19,5 @@ T linear_search(T begin, T end, std::iter_value_t<T>&& obj)
     }
     return end;
 }
+
+} // namespace jab::searching

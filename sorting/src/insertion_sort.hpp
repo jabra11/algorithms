@@ -1,6 +1,9 @@
 #include <iterator>
 #include <concepts>
 
+namespace jab::sorting
+{
+
 // O(n^2), Omega(n)
 template<typename T>
     requires(std::random_access_iterator<T> &&
@@ -20,3 +23,5 @@ void insertion_sort(T begin, T end)
         *(j+1) = tmp;
     }
 }
+
+} // namespace jab::sorting
