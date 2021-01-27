@@ -1,9 +1,5 @@
-set(src
-    src/main.cc
-    src/selection_sort.hpp
-    src/insertion_sort.hpp
-    )
+add_library(sorting_API INTERFACE)
+target_include_directories(sorting_API INTERFACE include)
 
-add_executable(sorting ${src})
-
-target_link_libraries(sorting PUBLIC utility)
+add_subdirectory(test)
+#add_subdirectory(benchmark)

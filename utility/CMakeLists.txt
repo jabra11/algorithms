@@ -1,5 +1,2 @@
-set(src
-    src/utils.hpp)
-
-add_library(utility INTERFACE)
-target_include_directories(utility INTERFACE src)
+add_library(jab_utils INTERFACE)
+target_include_directories(jab_utils INTERFACE include)
