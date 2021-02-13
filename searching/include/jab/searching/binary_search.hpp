@@ -12,8 +12,8 @@ namespace jab::searching
 // such that *begin <= *end
 
 template<typename T, typename ItV = std::iter_value_t<T>> 
-    requires(std::random_access_iterator<T> && std::totally_ordered<ItV>
-        && std::same_as<std::remove_cvref_t<ItV>, std::remove_cvref_t<std::iter_value_t<T>>>)
+requires(std::random_access_iterator<T> && std::totally_ordered<ItV>
+    && std::same_as<std::remove_cvref_t<ItV>, std::remove_cvref_t<std::iter_value_t<T>>>)
 T binary_search(T begin, T end, ItV&& obj)
 {
     T low = begin; 

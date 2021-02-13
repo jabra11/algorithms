@@ -2,10 +2,9 @@
 
 #include <gtest/gtest.h>
 
-#include <jab/sorting/insertion_sort.hpp>
 #include <jab/sorting/selection_sort.hpp>
-
 #include <jab/utils/utils.hpp>
+
 
 TEST(selection_sort_test, PositiveNos)
 {

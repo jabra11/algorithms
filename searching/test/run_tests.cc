@@ -2,10 +2,10 @@
 
 #include <gtest/gtest.h>
 
-#include <searching/binary_search.hpp>
-#include <searching/linear_search.hpp>
+#include <jab/searching/binary_search.hpp>
+#include <jab/searching/linear_search.hpp>
 
-#include <jab_utils/utils.hpp>
+#include <jab/utils/utils.hpp>
 
 
 TEST(linear_search_test, PositiveNos)

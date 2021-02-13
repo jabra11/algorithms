@@ -9,8 +9,8 @@ namespace jab::sorting
 
 // O(n^2), Omega(n)
 template<typename T>
-    requires(std::random_access_iterator<T> &&
-            std::totally_ordered<std::iter_value_t<T>>)
+requires(std::random_access_iterator<T> &&
+    std::totally_ordered<std::iter_value_t<T>>)
 void insertion_sort(T begin, T end)
 {
     for (auto i = begin+1; i != end; ++i)
