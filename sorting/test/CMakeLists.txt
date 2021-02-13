@@ -2,8 +2,14 @@ enable_testing()
 
 find_package(GTest)
 
-add_executable(insertion_sort run_insertion_sort_test.cc)
-target_link_libraries(insertion_sort
+set(tests
+    run_insertion_sort_test.cc
+    run_selection_sort_test.cc
+    run_merge_sort_test.cc
+    )
+
+add_executable(run_tests ${tests})
+target_link_libraries(run_tests
                     PRIVATE
                     sorting_API
                     jab_utils 
@@ -11,14 +17,4 @@ target_link_libraries(insertion_sort
                     gtest_main
                     )
 
-add_executable(selection_sort run_selection_sort_test.cc)
-target_link_libraries(selection_sort
-                    PRIVATE
-                    sorting_API
-                    jab_utils 
-                    gtest
-                    gtest_main
-                    )
-
-add_test(run_selection_sort_tests selection_sort)
-add_test(run_insertion_sort_tests insertion_sort)
+add_test(run_test run_tests)
