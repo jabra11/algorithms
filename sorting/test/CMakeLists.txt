@@ -8,8 +8,8 @@ set(tests
     run_merge_sort_test.cc
     )
 
-add_executable(run_tests ${tests})
-target_link_libraries(run_tests
+add_executable(run_sorting_tests ${tests})
+target_link_libraries(run_sorting_tests
                     PRIVATE
                     sorting_API
                     jab_utils 
@@ -17,4 +17,4 @@ target_link_libraries(run_tests
                     gtest_main
                     )
 
-add_test(run_test run_tests)
+add_test(sorting run_sorting_tests)
