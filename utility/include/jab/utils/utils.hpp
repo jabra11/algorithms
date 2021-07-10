@@ -24,8 +24,8 @@ struct return_vals<void>
     long long time_elapsed=0;
 };
 
-template<typename Func, typename... Args>
-requires(std::invocable<Func, Args...>)
+template<typename duration = std::chrono::microseconds, typename Func, typename... Args>
+    requires(std::invocable<Func, Args...>)
 auto measure_elapsed_time(Func&& func, Args&&... args)
 {
     using return_type = typename std::invoke_result_t<Func,Args...>;
@@ -35,14 +35,14 @@ auto measure_elapsed_time(Func&& func, Args&&... args)
         auto start = std::chrono::steady_clock::now();
         std::forward<Func>(func)(std::forward<Args>(args)...);
         auto stop = std::chrono::steady_clock::now();
-        return return_vals<void>{std::chrono::duration_cast<std::chrono::microseconds>(stop-start).count()};
+        return return_vals<void>{std::chrono::duration_cast<duration>(stop-start).count()};
     }
     else
     {
         auto start = std::chrono::steady_clock::now();
         auto res = std::forward<Func>(func)(std::forward<Args>(args)...);
         auto stop = std::chrono::steady_clock::now();
-        return return_vals<return_type> {res, std::chrono::duration_cast<std::chrono::microseconds>(stop-start).count()};
+        return return_vals<return_type> {res, std::chrono::duration_cast<duration>(stop-start).count()};
     }
 }
 
